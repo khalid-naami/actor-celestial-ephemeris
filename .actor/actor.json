@@ -1,0 +1,16 @@
+{
+    "actorSpecification": 1,
+    "name": "celestial-ephemeris-intelligence",
+    "title": "Celestial Ephemeris & Orbital Mechanics Intelligence",
+    "description": "Calculates moon phases, 7-planet orbital positions, sunrise/sunset twilights, eclipses, meteor showers, and live ISS coordinates.",
+    "version": "1.0.0",
+    "meta": {
+        "template": "python-empty"
+    },
+    "dockerfile": "./Dockerfile",
+    "input": "./input_schema.json",
+    "storages": {
+        "dataset": "./dataset_schema.json"
+    },
+    "output": "./output_schema.json"
+}
