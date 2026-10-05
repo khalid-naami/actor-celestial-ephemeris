@@ -1,0 +1,36 @@
+{
+    "actorSpecification": 1,
+    "fields": {
+        "type": "object",
+        "properties": {
+            "record_type": {
+                "type": "string",
+                "title": "Record Type"
+            },
+            "calculation_date": {
+                "type": "string",
+                "title": "Date of Calculation"
+            },
+            "observer_coordinates": {
+                "type": "object",
+                "title": "Observer Latitude / Longitude"
+            },
+            "data": {
+                "type": "object",
+                "title": "Ephemeris Data Payload"
+            },
+            "planets": {
+                "type": "array",
+                "title": "7 Planets Ephemeris List"
+            },
+            "meteor_showers": {
+                "type": "array",
+                "title": "Meteor Showers Calendar"
+            },
+            "eclipses_calendar": {
+                "type": "array",
+                "title": "Solar / Lunar Eclipses Calendar"
+            }
+        }
+    }
+}
