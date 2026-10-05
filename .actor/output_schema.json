@@ -1,0 +1,18 @@
+{
+    "actorOutputSchemaVersion": 1,
+    "title": "Celestial Ephemeris & Orbital Mechanics Output",
+    "properties": {
+        "results": {
+            "type": "string",
+            "title": "Dataset Items",
+            "description": "Full lunar phases, solar twilights, 7-planet ephemeris, eclipses, and ISS telemetry",
+            "template": "{{links.apiDefaultDatasetUrl}}/items"
+        },
+        "overview": {
+            "type": "string",
+            "title": "Summary Payload",
+            "description": "Summary report stored in Key-Value store",
+            "template": "{{links.apiDefaultKeyValueStoreUrl}}/records/OUTPUT"
+        }
+    }
+}
