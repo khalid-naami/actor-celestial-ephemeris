@@ -1,35 +1,109 @@
 {
     "actorSpecification": 1,
     "fields": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
         "type": "object",
         "properties": {
             "record_type": {
-                "type": "string",
+                "type": ["string", "null"],
                 "title": "Record Type"
             },
             "calculation_date": {
-                "type": "string",
+                "type": ["string", "null"],
                 "title": "Date of Calculation"
             },
+            "timestamp_utc": {
+                "type": ["string", "null"],
+                "title": "UTC Timestamp"
+            },
             "observer_coordinates": {
-                "type": "object",
-                "title": "Observer Latitude / Longitude"
+                "type": ["object", "null"],
+                "title": "Observer Latitude / Longitude",
+                "additionalProperties": true
             },
             "data": {
-                "type": "object",
-                "title": "Ephemeris Data Payload"
+                "type": ["object", "null"],
+                "title": "Ephemeris Data Payload",
+                "additionalProperties": true
+            },
+            "planets_count": {
+                "type": ["integer", "null"],
+                "title": "Planets Count"
             },
             "planets": {
-                "type": "array",
-                "title": "7 Planets Ephemeris List"
+                "type": ["array", "null"],
+                "title": "7 Planets Ephemeris List",
+                "items": {
+                    "type": "object",
+                    "additionalProperties": true
+                }
             },
             "meteor_showers": {
-                "type": "array",
-                "title": "Meteor Showers Calendar"
+                "type": ["array", "null"],
+                "title": "Meteor Showers Calendar",
+                "items": {
+                    "type": "object",
+                    "additionalProperties": true
+                }
             },
             "eclipses_calendar": {
-                "type": "array",
-                "title": "Solar / Lunar Eclipses Calendar"
+                "type": ["array", "null"],
+                "title": "Solar / Lunar Eclipses Calendar",
+                "items": {
+                    "type": "object",
+                    "additionalProperties": true
+                }
+            }
+        },
+        "additionalProperties": true,
+        "required": []
+    },
+    "views": {
+        "overview": {
+            "title": "Overview",
+            "transformation": {
+                "fields": [
+                    "record_type",
+                    "calculation_date",
+                    "observer_coordinates",
+                    "data",
+                    "planets",
+                    "meteor_showers",
+                    "eclipses_calendar"
+                ]
+            },
+            "display": {
+                "component": "table",
+                "properties": {
+                    "record_type": {
+                        "label": "Record Type",
+                        "format": "text"
+                    },
+                    "calculation_date": {
+                        "label": "Date of Calculation",
+                        "format": "text"
+                    },
+                    "observer_coordinates": {
+                        "label": "Observer Latitude / Longitude",
+                        "format": "object"
+                    },
+                    "data": {
+                        "label": "Ephemeris Data Payload",
+                        "format": "object"
+                    },
+                    "planets": {
+                        "label": "7 Planets Ephemeris List",
+                        "format": "array"
+                    },
+                    "meteor_showers": {
+                        "label": "Meteor Showers Calendar",
+                        "format": "array"
+                    },
+                    "eclipses_calendar": {
+                        "label": "Solar / Lunar Eclipses Calendar",
+                        "format": "array"
+                    }
+                }
             }
         }
     }
