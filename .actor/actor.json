@@ -5,12 +5,13 @@
     "description": "Calculates moon phases, 7-planet orbital positions, sunrise/sunset twilights, eclipses, meteor showers, and live ISS coordinates.",
     "version": "1.0.0",
     "meta": {
-        "template": "python-empty"
+        "templateId": "python-empty"
     },
-    "dockerfile": "./Dockerfile",
+    "dockerfile": "../Dockerfile",
     "input": "./input_schema.json",
     "storages": {
-        "dataset": "./dataset_schema.json"
+        "dataset": "./dataset_schema.json",
+        "keyValueStore": "./key_value_store_schema.json"
     },
     "output": "./output_schema.json"
 }
