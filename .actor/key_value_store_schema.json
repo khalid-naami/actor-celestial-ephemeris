@@ -1,0 +1,15 @@
+{
+    "actorKeyValueStoreSchemaVersion": 1,
+    "title": "Celestial Ephemeris Key-Value Store",
+    "description": "Key-value store schema for Celestial Ephemeris & Orbital Mechanics Intelligence.",
+    "collections": {
+        "default": {
+            "title": "Default Output Records",
+            "description": "Executive ephemeris summary stored under OUTPUT.",
+            "keyPrefix": "OUTPUT",
+            "contentTypes": [
+                "application/json"
+            ]
+        }
+    }
+}
